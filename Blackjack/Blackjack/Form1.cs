@@ -12,18 +12,24 @@ namespace Blackjack
 {
 	public partial class Form1 : Form
 	{
+		User currentUser;
+
 		Deck deck = new Deck();
 		Game game = new Game();
-		
 
+		Database database = new Database();
 
-		public Form1()
+		public Form1(User CurrentUser)
 		{
+			currentUser = CurrentUser;
 			InitializeComponent();
 		}
 
 		private void Form1_Load(object sender, EventArgs e)
 		{
+			lblName.Text = currentUser.Name;
+			lblBalance.Text = currentUser.Balance.ToString();
+
 			deck.NewDeck();
 			foreach (Card c in deck.FullDeck)
 			{
@@ -36,8 +42,6 @@ namespace Blackjack
 
 			if (game.GameOn == true)
 			{
-				
-
 				Button b = sender as Button;
 
 				if (game.player1.Bust == false)
@@ -116,45 +120,6 @@ namespace Blackjack
 		}
 
 		
-		private void btnStart_Click(object sender, EventArgs e)
-		{
-			if (game.GameOn == false)
-			{
-				
-
-				Hand dealerhand = new Hand();
-				Hand hand1 = new Hand();
-				Hand hand2 = new Hand();
-				Hand hand3 = new Hand();
-
-				
-
-				Dealer dealer = new Dealer(dealerhand);
-				Player player1 = new Player(hand1);
-				Player player2 = new Player(hand2);
-				Player player3 = new Player(hand3);
-
-				game.player1 = player1;
-				game.player2 = player2;
-				game.player3 = player3;
-
-				game.dealer = dealer;
-
-
-
-
-
-
-
-
-
-
-			}
-			else { MessageBox.Show("Maak het spel eerst af."); }
-
-			
-
-		}
 
 		private void btnStop_Click(object sender, EventArgs e)
 		{
@@ -204,11 +169,17 @@ namespace Blackjack
 				btnStop2.Enabled = false;
 				btnStop3.Enabled = false;
 
-				game.GameEnd();
+				game.GameEnd(database, currentUser);
 
-				game.player1.Balance += game.CheckWin(game.player1, game.player1.Inzet);
-				game.player2.Balance += game.CheckWin(game.player2, game.player2.Inzet);
-				game.player3.Balance += game.CheckWin(game.player3, game.player3.Inzet);
+				
+
+				
+
+				Form1 form1 = new Form1(currentUser);
+				form1.Show();
+				this.Close();
+
+
 			}
 		}
 
@@ -235,6 +206,13 @@ namespace Blackjack
 
 		private void lblInzetSpeler1_Click(object sender, EventArgs e)
 		{
+			if (Convert.ToInt32(lblInzetSpeler1.Text) == 0)
+			{
+				Hand hand1 = new Hand();
+				Player player1 = new Player(hand1, currentUser);
+				game.player1 = player1;
+			}
+
 			if (game.GameOn == false)
 			{
 				game.player1.Inzet += game.inzet;
@@ -244,6 +222,13 @@ namespace Blackjack
 
 		private void lblInzetSpeler2_Click(object sender, EventArgs e)
 		{
+			if (Convert.ToInt32(lblInzetSpeler2.Text) == 0)
+			{
+				Hand hand2 = new Hand();
+				Player player2 = new Player(hand2, currentUser);
+				game.player2 = player2;
+			}
+
 			if (game.GameOn == false)
 			{
 				game.player2.Inzet += game.inzet;
@@ -253,6 +238,13 @@ namespace Blackjack
 
 		private void lblInzetSpeler3_Click(object sender, EventArgs e)
 		{
+			if (Convert.ToInt32(lblInzetSpeler3.Text) == 0)
+			{
+				Hand hand3 = new Hand();
+				Player player3 = new Player(hand3, currentUser);
+				game.player3 = player3;
+			}
+
 			if (game.GameOn == false)
 			{
 				game.player3.Inzet += game.inzet;
@@ -262,59 +254,24 @@ namespace Blackjack
 
 		private void btnReady_Click(object sender, EventArgs e)
 		{
-			game.SetGameStatus(true);
+			
 
-			Card card1 = GetCard(deck);
-			game.dealer.HandCards.Add(card1);
-
-			Card card2 = GetCard(deck);
-			game.player1.HandCards.Add(card2);
-
-			Card card3 = GetCard(deck);
-			game.player2.HandCards.Add(card3);
-
-			Card card4 = GetCard(deck);
-			game.player3.HandCards.Add(card4);
-
-			int handvalue = 0;
-			foreach (Card c in game.dealer.HandCards)
+			if (game.GameOn == false)
 			{
-				handvalue += c.Value;
-				lblDealerGetal.Text = handvalue.ToString();
-			}
+				Hand dealerhand = new Hand();
+				Dealer dealer = new Dealer(dealerhand);
+				game.dealer = dealer;
 
-			handvalue = 0;
-			foreach (Card c in game.player1.HandCards)
-			{
-				handvalue += c.Value;
-				lblSpeler1Getal.Text = handvalue.ToString();
+				game.SetGameStatus(true);
 			}
+			else MessageBox.Show("Maak eerst het spel af");
 
-			handvalue = 0;
-			foreach (Card c in game.player2.HandCards)
-			{
-				handvalue += c.Value;
-				lblSpeler2Getal.Text = handvalue.ToString();
-			}
-
-			handvalue = 0;
-			foreach (Card c in game.player3.HandCards)
-			{
-				handvalue += c.Value;
-				lblSpeler3Getal.Text = handvalue.ToString();
-			}
+			
+			
 
 		}
 
-		public Card GetCard(Deck deck)
-		{
-
-			Random rnd = new Random();
-			int getal = rnd.Next(deck.FullDeck.Count);
-			Card randomcard = deck.FullDeck[getal];
-
-			return randomcard;
-		}
+		
 
 		private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
 		{

@@ -12,14 +12,17 @@ namespace Blackjack
 {
 	public partial class FormMain : Form
 	{
-		public FormMain()
+		User currentUser;
+
+		public FormMain(User CurrentUser)
 		{
+			currentUser = CurrentUser;
 			InitializeComponent();
 		}
 
 		private void btnBlackjack_Click(object sender, EventArgs e)
 		{
-			Form1 form1 = new Form1();
+			Form1 form1 = new Form1(currentUser);
 			form1.Show();
 			this.Hide();
 		}

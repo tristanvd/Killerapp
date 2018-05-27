@@ -8,7 +8,7 @@ namespace Blackjack
 {
 	public class Player
 	{
-		public string UserID { get; set; }
+		public int UserID { get; set; }
 		public string Name { get; set; }
 		public decimal Balance { get; set; }
 		public bool Bust { get; set; } = false;
@@ -17,10 +17,14 @@ namespace Blackjack
 		public int Inzet { get; set; } = 0;
 
 		
-		public Player(Hand Hand)
+		public Player(Hand Hand, User user)
 		{
+			UserID = user.Id;
+			Name = user.Name;
+			Balance = user.Balance;
 			hand = Hand;
 			HandCards = Hand.Cards;
+
 		}
 
 		

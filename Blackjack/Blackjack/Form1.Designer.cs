@@ -40,7 +40,6 @@
 			this.lblSpeler3Getal = new System.Windows.Forms.Label();
 			this.btnHit2 = new System.Windows.Forms.Button();
 			this.btnHit3 = new System.Windows.Forms.Button();
-			this.btnStart = new System.Windows.Forms.Button();
 			this.btnStop1 = new System.Windows.Forms.Button();
 			this.btnStop2 = new System.Windows.Forms.Button();
 			this.btnStop3 = new System.Windows.Forms.Button();
@@ -51,6 +50,8 @@
 			this.lblInzet5Euro = new System.Windows.Forms.Label();
 			this.lblInzet25Euro = new System.Windows.Forms.Label();
 			this.btnReady = new System.Windows.Forms.Button();
+			this.lblName = new System.Windows.Forms.Label();
+			this.lblBalance = new System.Windows.Forms.Label();
 			this.SuspendLayout();
 			// 
 			// label1
@@ -66,7 +67,7 @@
 			// 
 			this.lblDealerGetal.AutoSize = true;
 			this.lblDealerGetal.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblDealerGetal.Location = new System.Drawing.Point(283, 67);
+			this.lblDealerGetal.Location = new System.Drawing.Point(297, 65);
 			this.lblDealerGetal.Name = "lblDealerGetal";
 			this.lblDealerGetal.Size = new System.Drawing.Size(26, 29);
 			this.lblDealerGetal.TabIndex = 0;
@@ -105,7 +106,7 @@
 			// 
 			this.listBox1.FormattingEnabled = true;
 			this.listBox1.ItemHeight = 16;
-			this.listBox1.Location = new System.Drawing.Point(-1, 12);
+			this.listBox1.Location = new System.Drawing.Point(109, 375);
 			this.listBox1.Name = "listBox1";
 			this.listBox1.Size = new System.Drawing.Size(120, 212);
 			this.listBox1.TabIndex = 2;
@@ -170,16 +171,6 @@
 			this.btnHit3.Text = "Hit";
 			this.btnHit3.UseVisualStyleBackColor = true;
 			this.btnHit3.Click += new System.EventHandler(this.btnHit_Click);
-			// 
-			// btnStart
-			// 
-			this.btnStart.Location = new System.Drawing.Point(515, 16);
-			this.btnStart.Name = "btnStart";
-			this.btnStart.Size = new System.Drawing.Size(133, 59);
-			this.btnStart.TabIndex = 5;
-			this.btnStart.Text = "START";
-			this.btnStart.UseVisualStyleBackColor = true;
-			this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
 			// 
 			// btnStop1
 			// 
@@ -283,11 +274,31 @@
 			this.btnReady.UseVisualStyleBackColor = true;
 			this.btnReady.Click += new System.EventHandler(this.btnReady_Click);
 			// 
+			// lblName
+			// 
+			this.lblName.AutoSize = true;
+			this.lblName.Location = new System.Drawing.Point(10, 16);
+			this.lblName.Name = "lblName";
+			this.lblName.Size = new System.Drawing.Size(46, 17);
+			this.lblName.TabIndex = 9;
+			this.lblName.Text = "label3";
+			// 
+			// lblBalance
+			// 
+			this.lblBalance.AutoSize = true;
+			this.lblBalance.Location = new System.Drawing.Point(10, 46);
+			this.lblBalance.Name = "lblBalance";
+			this.lblBalance.Size = new System.Drawing.Size(46, 17);
+			this.lblBalance.TabIndex = 9;
+			this.lblBalance.Text = "label3";
+			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(670, 455);
+			this.ClientSize = new System.Drawing.Size(670, 526);
+			this.Controls.Add(this.lblBalance);
+			this.Controls.Add(this.lblName);
 			this.Controls.Add(this.btnReady);
 			this.Controls.Add(this.lblInzetSpeler1);
 			this.Controls.Add(this.lblInzetSpeler2);
@@ -295,7 +306,6 @@
 			this.Controls.Add(this.lblInzet5Euro);
 			this.Controls.Add(this.lblInzet1Euro);
 			this.Controls.Add(this.lblInzetSpeler3);
-			this.Controls.Add(this.btnStart);
 			this.Controls.Add(this.lblSpeler3Getal);
 			this.Controls.Add(this.lblSpeler2Getal);
 			this.Controls.Add(this.label5);
@@ -333,7 +343,6 @@
 		private System.Windows.Forms.Label lblSpeler3Getal;
 		private System.Windows.Forms.Button btnHit2;
 		private System.Windows.Forms.Button btnHit3;
-		private System.Windows.Forms.Button btnStart;
 		private System.Windows.Forms.Button btnStop1;
 		private System.Windows.Forms.Button btnStop2;
 		private System.Windows.Forms.Button btnStop3;
@@ -344,6 +353,8 @@
 		private System.Windows.Forms.Label lblInzet5Euro;
 		private System.Windows.Forms.Label lblInzet25Euro;
 		private System.Windows.Forms.Button btnReady;
+		private System.Windows.Forms.Label lblName;
+		private System.Windows.Forms.Label lblBalance;
 	}
 }
 

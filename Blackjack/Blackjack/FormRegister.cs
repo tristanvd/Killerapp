@@ -21,8 +21,7 @@ namespace Blackjack
 
 		private void btnRegister_Click(object sender, EventArgs e)
 		{
-			try
-			{
+			
 				string username = txtUsername.Text;
 				string password = txtPassword.Text;
 				string name = txtFirstName.Text + " " + txtInfix.Text + " " + txtLastName.Text;
@@ -41,11 +40,7 @@ namespace Blackjack
 				FormLogin formLogin = new FormLogin();
 				formLogin.Show();
 				this.Hide();
-			}
-			catch
-			{
-				MessageBox.Show("fail");
-			}
+			
 		}
 	}
 }

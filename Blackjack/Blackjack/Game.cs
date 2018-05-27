@@ -56,11 +56,18 @@ namespace Blackjack
 			return bedrag;
 		}
 
-		public void GameEnd()
+		public void GameEnd(Database database, User currentUser)
 		{
 			SetGameStatus(false);
 
-			
+			player1.Balance += CheckWin(player1, player1.Inzet);
+			player2.Balance += CheckWin(player2, player2.Inzet);
+			player3.Balance += CheckWin(player3, player3.Inzet);
+
+			database.UpdateBalance(player1.Balance, currentUser);
+			database.UpdateBalance(player2.Balance, currentUser);
+			database.UpdateBalance(player3.Balance, currentUser);
+
 		}
 
 	}

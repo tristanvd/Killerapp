@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -24,10 +25,13 @@ namespace Blackjack
 			string username = txtUser.Text;
 			string password = txtPassword.Text;
 			if (database.Login(username, password) == true)
-			{	
-				Form1 form1 = new Form1();
-				form1.Show();
+			{
+				
+
+				FormMain formMain = new FormMain(database.GetCurrentUser(username));
+				formMain.Show();
 				this.Hide();
+
 			}
 			else
 			{
@@ -37,10 +41,14 @@ namespace Blackjack
 
 		private void lblRegister_Click(object sender, EventArgs e)
 		{
-			FormMain formMain = new FormMain();
-			formMain.Show();
+			Register formRegister = new Register();
+			formRegister.Show();
 			this.Hide();
 			
 		}
+
+		
+
+		
 	}
 }
