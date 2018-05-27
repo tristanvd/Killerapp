@@ -8,14 +8,21 @@ namespace Blackjack
 {
 	public class Player
 	{
+		public string UserID { get; set; }
 		public string Name { get; set; }
 		public decimal Balance { get; set; }
 		public bool Bust { get; set; } = false;
-		public List<Card> HandCards { get; set; }
+		public Hand hand { get; set; }
+		public List<Card> HandCards = new List<Card>();
+		public int Inzet { get; set; } = 0;
+
 		
-		public Player (Hand hand)
+		public Player(Hand Hand)
 		{
-			HandCards = hand.Cards;
+			hand = Hand;
+			HandCards = Hand.Cards;
 		}
+
+		
 	}
 }

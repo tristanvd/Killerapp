@@ -8,3 +8,17 @@ c:\users\trist\source\repos\Blackjack\Blackjack\bin\Debug\Blackjack.exe
 c:\users\trist\source\repos\Blackjack\Blackjack\bin\Debug\Blackjack.pdb
 c:\users\trist\source\repos\Blackjack\Blackjack\obj\Debug\Blackjack.exe
 c:\users\trist\source\repos\Blackjack\Blackjack\obj\Debug\Blackjack.pdb
+C:\Users\trist\OneDrive\Documenten\GitHub\Killerapp\Blackjack\Blackjack\obj\Debug\Blackjack.csprojResolveAssemblyReference.cache
+C:\Users\trist\OneDrive\Documenten\GitHub\Killerapp\Blackjack\Blackjack\obj\Debug\Blackjack.Form1.resources
+C:\Users\trist\OneDrive\Documenten\GitHub\Killerapp\Blackjack\Blackjack\obj\Debug\Blackjack.Properties.Resources.resources
+C:\Users\trist\OneDrive\Documenten\GitHub\Killerapp\Blackjack\Blackjack\obj\Debug\Blackjack.csproj.GenerateResource.Cache
+C:\Users\trist\OneDrive\Documenten\GitHub\Killerapp\Blackjack\Blackjack\obj\Debug\Blackjack.csproj.CoreCompileInputs.cache
+C:\Users\trist\OneDrive\Documenten\GitHub\Killerapp\Blackjack\Blackjack\obj\Debug\Blackjack.exe
+C:\Users\trist\OneDrive\Documenten\GitHub\Killerapp\Blackjack\Blackjack\obj\Debug\Blackjack.pdb
+C:\Users\trist\OneDrive\Documenten\GitHub\Killerapp\Blackjack\Blackjack\bin\Debug\Blackjack.exe.config
+C:\Users\trist\OneDrive\Documenten\GitHub\Killerapp\Blackjack\Blackjack\bin\Debug\Blackjack.exe
+C:\Users\trist\OneDrive\Documenten\GitHub\Killerapp\Blackjack\Blackjack\bin\Debug\Blackjack.pdb
+C:\Users\trist\OneDrive\Documenten\GitHub\Killerapp\Blackjack\Blackjack\obj\Debug\Blackjack.Register.resources
+C:\Users\trist\OneDrive\Documenten\GitHub\Killerapp\Blackjack\Blackjack\bin\Debug\Database1.mdf
+C:\Users\trist\OneDrive\Documenten\GitHub\Killerapp\Blackjack\Blackjack\bin\Debug\Database1_log.ldf
+C:\Users\trist\OneDrive\Documenten\GitHub\Killerapp\Blackjack\Blackjack\obj\Debug\Blackjack.FormLogin.resources

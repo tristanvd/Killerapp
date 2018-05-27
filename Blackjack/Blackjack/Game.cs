@@ -8,31 +8,61 @@ namespace Blackjack
 {
 	public class Game
 	{
-		public bool Player1 { get; set; } = false;
-		public bool Player2 { get; set; } = false;
-		public bool Player3 { get; set; } = false;
 
-		public bool GameFinished { get; set; } = false;
+		public int inzet { get; set; } = 1;
+
+		public bool GameOn { get; set; } = false;
+
+		public Player player1 { get; set; }
+		public Player player2 { get; set; }
+		public Player player3 { get; set; }
+
+		public Dealer dealer { get; set; }
+
+		//public Game (Player player1, Player player2, Player player3)
+		//{
+		//	this.player1 = player1;
+		//	this.player2 = player2;
+		//	this.player3 = player3;
+		//}
 
 
-		public void NextPlayer()
+		public void SetGameStatus(bool status)
 		{
-			if (Player1 == true)
+			GameOn = status;
+		}
+
+		public int CheckWin(Player player, int inzet)
+		{
+			foreach (Card c in player.HandCards)
 			{
-				Player1 = false;
-				Player2 = true;
-			}
-			if (Player2 == true)
-			{
-				Player2 = false;
-				Player3 = true;
-			}
-			if (Player3 == true)
-			{
-				Player3 = false;
-				GameFinished = true;
+				player.hand.Value += c.Value;
 			}
 
+
+			int bedrag = 0;
+			if (player.Bust == false && player.hand.Value == dealer.hand.Value)
+			{
+				bedrag = inzet;
+			}
+			if (player.hand.Value > dealer.hand.Value)
+			{
+				bedrag = inzet * 2;
+			}
+			else
+			{
+				bedrag = 0;
+			}
+			return bedrag;
 		}
+
+		public void GameEnd()
+		{
+			SetGameStatus(false);
+
+			
+		}
+
 	}
+
 }

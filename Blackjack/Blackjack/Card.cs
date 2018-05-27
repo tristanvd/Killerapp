@@ -9,6 +9,7 @@ namespace Blackjack
 	public class Card
 	{
 		public int Value { get; set; }
+		public string Type { get; set; }
 
 		public override string ToString()
 		{

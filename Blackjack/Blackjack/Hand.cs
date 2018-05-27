@@ -16,8 +16,9 @@ namespace Blackjack
 			hand.Cards.Clear();
 		}
 
-		public Card GetCard(Hand hand, Deck deck)
+		public Card GetCard(Deck deck)
 		{
+			
 			Random rnd = new Random();
 			int getal = rnd.Next(deck.FullDeck.Count);
 			Card randomcard = deck.FullDeck[getal];
